@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earn ₹5000 - Share with Friends!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .highlight {
+            color: #FFD700;
+            font-weight: bold;
+        }
+        .steps {
+            text-align: left;
+            margin: 30px 0;
+            background: rgba(255,255,255,0.15);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .step {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .step-number {
+            background-color: #FFD700;
+            color: #333;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        .btn {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 20px 0;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .btn:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        .counter {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        .hidden {
+            display: none;
+        }
+        .reward-section {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255,215,0,0.2);
+            border-radius: 10px;
+            border: 2px dashed #FFD700;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Earn <span class="highlight">₹5000</span> Cash Reward!</h1>
+    <p>Complete this simple task and claim your reward instantly</p>
+
+    <div class="steps">
+        <div class="step">
+            <div class="step-number">1</div>
+            <div>Click the "Share Now" button below</div>
+        </div>
+        <div class="step">
+            <div class="step-number">2</div>
+            <div>Share your unique link with 10 friends on WhatsApp</div>
+        </div>
+        <div class="step">
+            <div class="step-number">3</div>
+            <div>Get instant access to your ₹5000 reward</div>
+        </div>
+    </div>
+
+    <div class="counter">
+        Shares completed: <span id="share-count">0</span>/10
+    </div>
+
+    <button id="share-btn" class="btn">SHARE NOW</button>
+
+    <div id="reward-section" class="reward-section hidden">
+        <h2>Congratulations! 🎉</h2>
+        <p>You've successfully shared with 10 friends</p>
+        <a href="reward.html" class="btn">CLAIM YOUR ₹5000 REWARD</a>
+        <p><small>Limited time offer - Claim within 24 hours</small></p>
+    </div>
+</div>
+
+<script>
+    let shareCount = 0;
+    const shareBtn = document.getElementById('share-btn');
+    const shareCountEl = document.getElementById('share-count');
+    const rewardSection = document.getElementById('reward-section');
+
+    shareBtn.addEventListener('click', function() {
+        // Generate unique referral link
+        const referralLink = "https://earn5000.example.com/?ref=" + Math.random().toString(36).substring(7);
+
+        // Create WhatsApp share link
+        const message = `Hey! I just found this amazing way to earn ₹5000 instantly. Check it out: ${referralLink}`;
+        const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+
+        // Open WhatsApp share dialog
+        window.open(whatsappUrl, '_blank');
+
+        // Simulate share tracking (in real app, this would be server-side)
+        shareCount++;
+        shareCountEl.textContent = shareCount;
+
+        // Show reward section when 10 shares are reached
+        if (shareCount >= 10) {
+            rewardSection.classList.remove('hidden');
+            shareBtn.disabled = true;
+            shareBtn.textContent = "Task Completed!";
+            shareBtn.style.backgroundColor = "#4CAF50";
+        }
+    });
+</script>
+</body>
+</html>
